@@ -1,0 +1,30 @@
+{
+  "name": "mojolink",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "watch": {
+    "webpack": "src/js/**/*.js",
+    "css": "src/css/styles.css",
+    "html": "src/indexSrc.html"
+  },
+  "scripts": {
+    "watch": "npm-watch",
+    "webpack": "webpack || exit 1",
+    "webpack-prod": "webpack --mode=production || exit 1",
+    "css": "cp -r src/css/ dist/",
+    "html": "cp src/indexSrc.html dist/index.html",
+    "dev": "npm run webpack && npm run css && npm run html",
+    "build": "npm run webpack-prod && npm run css && npm run html"
+  },
+  "author": "Tony Rosler",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/plugin-transform-runtime": "^7.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
